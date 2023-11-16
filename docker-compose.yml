@@ -1,0 +1,13 @@
+version: "2"
+services:
+    autoadmin-agent:
+        build:
+            context: .
+            dockerfile: /Users/leojclarke/dev/udemy-laravel/event-management
+        ports:
+            - 7007:7007
+        env_file: .config.env
+        volumes:
+            - ./dist:/app/dist
+            - ./src:/app/src
+        command: ["yarn", "start:dev"]
